@@ -12,7 +12,7 @@ export const Home = () => {
     const tg = window.Telegram.WebApp;
     const data = tg.initData || { userId: "123134234" };
     handleDispatchAction(data);
-  }, [handleDispatchAction]);
+  }, []);
 
   return (
     <div>
