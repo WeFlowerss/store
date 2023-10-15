@@ -9,6 +9,7 @@ export const Home = () => {
 
   useEffect(() => {
     const tg = window.Telegram.WebApp;
+    tg.expand();
     const data = tg.initData || { userId: "123134234" };
     handleDispatchAction(data);
   });
