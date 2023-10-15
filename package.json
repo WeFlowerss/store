@@ -1,7 +1,8 @@
 {
   "name": "weflowers-app-1",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
+  "homepage": "https://pikimell.github.io/WeFlowersApp/",
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.7",
     "@testing-library/jest-dom": "^5.17.0",
