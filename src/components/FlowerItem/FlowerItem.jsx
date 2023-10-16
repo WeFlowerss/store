@@ -10,11 +10,11 @@ Notify.init({
 });
 
 export const FlowerItem = ({ flower, showModal }) => {
-  const { name, image, id, price } = flower;
+  const { name, image, _id, price } = flower;
 
   const addToBucket = async () => {
     try {
-      await FlowersAPI.bucket.addToBucket(Telegram.data.userId, id);
+      await FlowersAPI.bucket.addToBucket(Telegram.data.userId, _id.toString());
       Notify.success("Успішно додано до кошика");
     } catch {
       Notify.failure("На жаль сталася помилка");
@@ -22,7 +22,7 @@ export const FlowerItem = ({ flower, showModal }) => {
   };
 
   return (
-    <div className={style["flower-item"]} data-id={id}>
+    <div className={style["flower-item"]} data-id={_id}>
       <div className={style["flower-body"]}>
         <div>
           <h3>{name}</h3>
