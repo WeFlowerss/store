@@ -5,7 +5,7 @@ export const FlowerInfo = ({ item }) => {
       console.log(item);
       // Telegram.tg.showAlert("Hello world");
       // Telegram.tg.showAlert(JSON.stringify(Telegram.tg.WebAppUser));
-      Telegram.tg.showAlert(JSON.stringify(Telegram.tg));
+      Telegram.tg.showAlert(Object.keys(Telegram.tg).toString());
     } catch (err) {
       Telegram.tg.showAlert(JSON.stringify(err));
     }
