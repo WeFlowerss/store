@@ -2,7 +2,7 @@ import { Telegram } from "../../helpers/telegram";
 import { decodeQueryString } from "../../helpers/services";
 import style from "./FlowerInfo.module.css";
 export const FlowerInfo = ({ item }) => {
-  const data = decodeQueryString(Telegram.tg.initData);
+  const data = decodeQueryString(Telegram.data);
 
   const onClick = () => {
     try {
@@ -15,7 +15,7 @@ export const FlowerInfo = ({ item }) => {
   return (
     <div className={style["flower-info"]}>
       {/* <h1>{item.name}</h1> */}
-      <p className={style.text}>{JSON.stringify(data.user)}</p>
+      <p className={style.text}>{JSON.stringify(data)}</p>
       <button onClick={onClick}>Show</button>
     </div>
   );
