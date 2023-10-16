@@ -1,3 +1,4 @@
+import style from "./Modal.module.css";
 export const Modal = ({ children }) => {
-  return <div>{children}</div>;
+  return <div className={style.modal}>{children}</div>;
 };

@@ -4,4 +4,6 @@ body {
   margin: 0;
   font-family: "Raleway", sans-serif !important;
   max-width: 400px;
+  height: 100vw;
+  overflow-y: hidden;
 }

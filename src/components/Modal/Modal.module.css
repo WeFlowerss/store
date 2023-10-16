@@ -1,0 +1,14 @@
+.modal {
+  width: 70vw;
+  min-height: 200px;
+  height: auto;
+  max-height: 70%;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  background-color: white;
+  border-radius: 15px;
+  padding: 15px;
+}

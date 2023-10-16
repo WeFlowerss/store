@@ -1,3 +1,7 @@
 export const FlowerInfo = ({ item }) => {
-  return <div></div>;
+  return (
+    <div>
+      <h1>{item.name}</h1>
+    </div>
+  );
 };

@@ -3,12 +3,13 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  overflow-y: auto;
+  height: 100vh;
 }
 
 .flower-list {
   display: flex;
   width: 100%;
-  min-height: 100vh;
   padding: 5%;
   flex-direction: column;
   gap: 10px;
