@@ -2,10 +2,10 @@ import { Telegram } from "../../helpers/telegram";
 export const FlowerInfo = ({ item }) => {
   const onClick = () => {
     try {
-      console.log(item);
-      // Telegram.tg.showAlert("Hello world");
-      // Telegram.tg.showAlert(JSON.stringify(Telegram.tg.WebAppUser));
-      Telegram.tg.showAlert(Object.keys(Telegram.tg).toString());
+      console.log(Telegram.tg);
+      console.log(Telegram.tg.initData);
+      console.log(Telegram.tg.initDataUnsafe);
+      console.log(Telegram.tg);
     } catch (err) {
       Telegram.tg.showAlert(JSON.stringify(err));
     }
@@ -14,6 +14,7 @@ export const FlowerInfo = ({ item }) => {
   return (
     <div>
       {/* <h1>{item.name}</h1> */}
+      <p>{Telegram.tg.initData.split("\\n").join("\n")}</p>
       <button onClick={onClick}>Show</button>
     </div>
   );
