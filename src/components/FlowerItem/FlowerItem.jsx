@@ -11,11 +11,18 @@ export const FlowerItem = ({ flower }) => {
           <h3>{name}</h3>
           <h4>Вартість - {price}грн</h4>
         </div>
-
-        <Button>Add To Cart</Button>
+        <div className={style["flower-buttons"]}>
+          <Button>Show Info</Button>
+          <Button>Add To Cart</Button>
+        </div>
       </div>
       <div className={style["flower-img"]}>
-        <img src={image} alt="bouquet" />
+        <img
+          className="lazyload"
+          src="https://www.partyperfect.my/wp-content/uploads/2023/04/1.jpg"
+          data-src={image}
+          alt="bouquet"
+        />
       </div>
     </div>
   );

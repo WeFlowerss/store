@@ -11,7 +11,7 @@
 }
 
 .primary-button {
-  padding: 5px;
+  padding: 5px 30px;
   border-radius: 5px;
   color: #f4f9fa;
   border: 2px solid #045661;
@@ -21,4 +21,5 @@
   margin-bottom: 20px;
   box-shadow: 3px 3px 8px 0 rgba(0, 0, 0, 0.48);
   cursor: pointer;
+  font-size: 20px;
 }

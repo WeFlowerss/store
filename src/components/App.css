@@ -7,3 +7,8 @@ body {
 * {
   box-sizing: border-box !important;
 }
+
+.lazyloaded {
+  filter: none !important;
+  -webkit-filter: none !important;
+}
