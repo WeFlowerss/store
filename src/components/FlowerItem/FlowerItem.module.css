@@ -29,7 +29,7 @@
 .flower-img {
   overflow: hidden;
   border-radius: 20px;
-  border: 1px solid black;
+  border: 1px solid #045661;
   width: 30%;
   display: flex;
   justify-content: center;
@@ -38,6 +38,5 @@
 
 .flower-img img {
   height: 100%;
-  width: auto;
   object-fit: contain;
 }
