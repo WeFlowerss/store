@@ -4,7 +4,11 @@ export const FlowerInfo = ({ item }) => {
     try {
       console.log(item);
       Telegram.tg.showAlert("Hello world");
-    } catch {}
+      Telegram.tg.showAlert(JSON.stringify(Telegram.tg.WebAppUser));
+      Telegram.tg.showAlert(JSON.stringify(Telegram.tg));
+    } catch (err) {
+      Telegram.tg.showAlert(JSON.stringify(err));
+    }
   };
 
   return (
