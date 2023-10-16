@@ -3,7 +3,7 @@ export const FlowerInfo = ({ item }) => {
   const onClick = () => {
     try {
       console.log(item);
-      Telegram.tg.showAlert("Hello world");
+      // Telegram.tg.showAlert("Hello world");
       Telegram.tg.showAlert(JSON.stringify(Telegram.tg.WebAppUser));
       Telegram.tg.showAlert(JSON.stringify(Telegram.tg));
     } catch (err) {
