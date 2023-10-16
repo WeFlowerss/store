@@ -1,11 +1,12 @@
 import { Telegram } from "../../helpers/telegram";
+import { decodeQueryString } from "../../helpers/services";
+import style from "./FlowerInfo.module.css";
 export const FlowerInfo = ({ item }) => {
+  const data = decodeQueryString(Telegram.tg.initData);
+
   const onClick = () => {
     try {
-      console.log(Telegram.tg);
-      console.log(Telegram.tg.initData);
-      console.log(Telegram.tg.initDataUnsafe);
-      console.log(Telegram.tg);
+      Telegram.tg.showAlert(JSON.stringify(data));
     } catch (err) {
       Telegram.tg.showAlert(JSON.stringify(err));
     }
@@ -14,7 +15,7 @@ export const FlowerInfo = ({ item }) => {
   return (
     <div>
       {/* <h1>{item.name}</h1> */}
-      <p>{Telegram.tg.initData.split("\\n").join("\n")}</p>
+      <p className={style.text}>{JSON.stringify(data.user)}</p>
       <button onClick={onClick}>Show</button>
     </div>
   );
