@@ -15,7 +15,7 @@ export const FlowerItem = ({ flower, showModal }) => {
   const addToBucket = async () => {
     try {
       await FlowersAPI.bucket.addToBucket(
-        Telegram.data.user.id,
+        +Telegram.data.user.id,
         _id.toString()
       );
       Notify.success("Успішно додано до кошика");
