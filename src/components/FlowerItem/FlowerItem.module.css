@@ -1,6 +1,36 @@
 .flower-item {
   display: flex;
-  width: 200px;
-  border: 1px solid black;
+  width: 100%;
+  background-color: rgb(255, 226, 215);
+  border-radius: 10px;
   overflow: hidden;
+  height: 150px;
+  padding: 10px;
+}
+
+.flower-body {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+}
+
+.flower-body h3 {
+  font-size: 16px;
+  margin-bottom: 0;
+}
+
+.flower-img {
+  overflow: hidden;
+  border-radius: 20px;
+  border: 1px solid black;
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flower-img img {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
 }
