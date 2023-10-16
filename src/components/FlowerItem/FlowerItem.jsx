@@ -1,9 +1,26 @@
 import { Button } from "../Button/Button";
 import style from "./FlowerItem.module.css";
+import { Telegram } from "../../helpers/telegram";
+import { FlowersAPI } from "../../repositories/flowers-api";
+import { Notify } from "notiflix/build/notiflix-notify-aio";
+
+Notify.init({
+  position: "center-center",
+  distance: "10px",
+});
 
 export const FlowerItem = ({ flower, showModal }) => {
-  //   const { id, name, image, price, description, compound } = flower;
   const { name, image, id, price } = flower;
+
+  const addToBucket = async () => {
+    try {
+      await FlowersAPI.bucket.addToBucket(Telegram.data.userId, id);
+      Notify.success("Успішно додано до кошика");
+    } catch {
+      Notify.failure("На жаль сталася помилка");
+    }
+  };
+
   return (
     <div className={style["flower-item"]} data-id={id}>
       <div className={style["flower-body"]}>
@@ -13,7 +30,7 @@ export const FlowerItem = ({ flower, showModal }) => {
         </div>
         <div className={style["flower-buttons"]}>
           <Button callback={showModal}>Show Info</Button>
-          <Button>Add To Cart</Button>
+          <Button callback={addToBucket}>Add To Cart</Button>
         </div>
       </div>
       <div className={style["flower-img"]}>
