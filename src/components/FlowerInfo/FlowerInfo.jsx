@@ -13,7 +13,7 @@ export const FlowerInfo = ({ item }) => {
   };
 
   return (
-    <div>
+    <div className={style["flower-info"]}>
       {/* <h1>{item.name}</h1> */}
       <p className={style.text}>{JSON.stringify(data.user)}</p>
       <button onClick={onClick}>Show</button>
