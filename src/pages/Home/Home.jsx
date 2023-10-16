@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { updateUser } from "../../store/user/actions";
+import { FlowerList } from "../../components/FlowerList/FlowerList";
 export const Home = () => {
   const dispatch = useDispatch();
   const handleDispatchAction = (data) => {
@@ -16,7 +17,7 @@ export const Home = () => {
 
   return (
     <div>
-      <h1>Home1</h1>
+      <FlowerList />
     </div>
   );
 };

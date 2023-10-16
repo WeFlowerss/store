@@ -6,10 +6,10 @@ import { Store } from "./store";
 import { User } from "./user";
 
 export class FlowersAPI {
-  bucket = new Bucket();
-  orders = new Orders();
-  wishlist = new Wishlist();
-  products = new Products();
-  store = new Store();
-  user = new User();
+  bucket = Bucket;
+  orders = Orders;
+  wishlist = Wishlist;
+  products = Products;
+  store = Store;
+  user = User;
 }
