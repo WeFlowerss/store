@@ -1,35 +1,30 @@
-import { useEffect } from "react";
+import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchFlowers } from "../../store/flowers/actions";
 import { FlowerItem } from "../FlowerItem/FlowerItem";
+import { Button } from "../Button/Button";
 import style from "./FlowerList.module.css";
 
 export const FlowerList = () => {
+  const [page, updatePage] = useState(1);
   const flowers = useSelector((state) => state.flowersReducer.flowers);
-  const loading = useSelector((state) => state.flowersReducer.loading);
-  const error = useSelector((state) => state.flowersReducer.error);
   const dispatch = useDispatch();
-  console.log(flowers);
 
-  useEffect(() => {
-    dispatch(fetchFlowers());
-  }, [dispatch]);
-
-  if (loading) {
-    return <p>Loading...</p>;
-  }
-
-  if (error) {
-    return <p>Error: {error}</p>;
-  }
+  const onLoadPageClick = () => {
+    updatePage(page + 1);
+    dispatch(fetchFlowers(page));
+  };
 
   return (
-    <div>
+    <div className={style["flowers-component"]}>
       <ul className={style["flower-list"]}>
         {flowers?.map((flower, index) => (
           <FlowerItem key={index} flower={flower} />
         ))}
       </ul>
+      <Button isPrimary={true} callback={onLoadPageClick}>
+        Load More
+      </Button>
     </div>
   );
 };

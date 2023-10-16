@@ -1,7 +1,10 @@
 import style from "./Button.module.css";
-export const Button = ({ onCLick, children }) => {
+export const Button = ({ callback, children, isPrimary = false }) => {
   return (
-    <button className={style.button} onClick={onCLick}>
+    <button
+      className={style[isPrimary ? "primary-button" : "button"]}
+      onClick={callback}
+    >
       {children}
     </button>
   );

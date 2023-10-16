@@ -5,6 +5,7 @@ const axios = axios2.create({
 });
 
 export class Products {
+  static isActive = false;
   static bouquets = [];
 
   static async getProducts() {
@@ -29,12 +30,15 @@ export class Products {
   }
 
   static async getBouquets(firstIndex, limit) {
+    if (this.isActive) return [];
+    this.isActive = true;
     const res = await axios.get(`/bouquets`, {
       params: {
         offset: firstIndex,
         limit,
       },
     });
+    this.isActive = false;
     return res.data;
   }
   static async deleteProduct(id) {

@@ -10,7 +10,11 @@ export const flowersReducer = (state = initialState, action) => {
       return { ...state, loading: true, error: null };
 
     case "FETCH_DATA_SUCCESS":
-      return { ...state, loading: false, flowers: action.payload };
+      return {
+        ...state,
+        loading: false,
+        flowers: [...state.flowers, ...action.payload],
+      };
 
     case "FETCH_DATA_FAILURE":
       return { ...state, loading: false, error: action.payload };

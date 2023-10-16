@@ -1,3 +1,10 @@
+.flowers-component {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}
+
 .flower-list {
   display: flex;
   width: 100%;
