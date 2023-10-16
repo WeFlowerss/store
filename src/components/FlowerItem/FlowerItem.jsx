@@ -1,7 +1,7 @@
 import { Button } from "../Button/Button";
 import style from "./FlowerItem.module.css";
 
-export const FlowerItem = ({ flower }) => {
+export const FlowerItem = ({ flower, showModal }) => {
   //   const { id, name, image, price, description, compound } = flower;
   const { name, image, id, price } = flower;
   return (
@@ -12,7 +12,7 @@ export const FlowerItem = ({ flower }) => {
           <h4>Вартість - {price}грн</h4>
         </div>
         <div className={style["flower-buttons"]}>
-          <Button>Show Info</Button>
+          <Button callback={showModal}>Show Info</Button>
           <Button>Add To Cart</Button>
         </div>
       </div>

@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { updateUser } from "../../store/user/actions";
 import { FlowerList } from "../../components/FlowerList/FlowerList";
 import { fetchFlowers } from "../../store/flowers/actions";
+
 export const Home = () => {
   const dispatch = useDispatch();
 
