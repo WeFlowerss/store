@@ -6,17 +6,16 @@ import { fetchFlowers } from "../../store/flowers/actions";
 export const Home = () => {
   const dispatch = useDispatch();
 
-  const handleDispatchAction = (data) => {
-    dispatch(updateUser(data));
-  };
-
   useEffect(() => {
+    const handleDispatchAction = (data) => {
+      dispatch(updateUser(data));
+    };
     const tg = window.Telegram.WebApp;
     tg.expand();
     const data = tg.initData || { userId: "123134234" };
     handleDispatchAction(data);
     dispatch(fetchFlowers(0));
-  }, []);
+  }, [dispatch]);
 
   return (
     <div>
