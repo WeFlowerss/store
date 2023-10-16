@@ -14,6 +14,7 @@ export const FlowerInfo = ({ item }) => {
   return (
     <div className={style["flower-info"]}>
       {/* <h1>{item.name}</h1> */}
+      <h1>{Telegram.data.user.id}</h1>
       <p className={style.text}>{JSON.stringify(data)}</p>
       <button onClick={onClick}>Show</button>
     </div>
