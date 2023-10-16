@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchFlowers } from "../../store/flowers/actions";
+import { FlowerItem } from "../FlowerItem/FlowerItem";
+import style from "./FlowerList.module.css";
 
 export const FlowerList = () => {
   const flowers = useSelector((state) => state.flowersReducer.flowers);
@@ -23,10 +25,9 @@ export const FlowerList = () => {
 
   return (
     <div>
-      <h1>Flower List</h1>
-      <ul>
+      <ul className={style["flower-list"]}>
         {flowers?.map((flower, index) => (
-          <li key={index}>{flower.name}</li>
+          <FlowerItem key={index} flower={flower} />
         ))}
       </ul>
     </div>

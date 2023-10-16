@@ -1,0 +1,6 @@
+.flower-list {
+  display: flex;
+  width: 800px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
