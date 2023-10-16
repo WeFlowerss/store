@@ -1,22 +1,29 @@
 .flower-item {
   display: flex;
   width: 100%;
-  background-color: rgb(255, 226, 215);
+  background: linear-gradient(to right, #fae0df, #faf1f135);
   border-radius: 10px;
   overflow: hidden;
   height: 150px;
   padding: 10px;
+  justify-content: space-between;
+  box-shadow: 3px 3px 8px 0 rgba(0, 0, 0, 0.48);
 }
 
 .flower-body {
   display: flex;
   flex-direction: column;
-  width: 70%;
+  width: 65%;
+  justify-content: space-between;
 }
 
 .flower-body h3 {
   font-size: 16px;
-  margin-bottom: 0;
+  margin: 0;
+}
+.flower-body h4 {
+  font-size: 14px;
+  margin-top: 10px;
 }
 
 .flower-img {

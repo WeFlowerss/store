@@ -1,0 +1,9 @@
+.button {
+  padding: 5px;
+  border-radius: 5px;
+  color: #045661;
+  border: 2px solid #045661;
+  background-color: transparent;
+  font-family: "Raleway", sans-serif;
+  font-weight: bold;
+}
