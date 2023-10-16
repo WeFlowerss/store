@@ -1,8 +1,7 @@
 import { Telegram } from "../../helpers/telegram";
-import { decodeQueryString } from "../../helpers/services";
 import style from "./FlowerInfo.module.css";
 export const FlowerInfo = ({ item }) => {
-  const data = decodeQueryString(Telegram.data);
+  const data = Telegram.data;
 
   const onClick = () => {
     try {
