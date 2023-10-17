@@ -6,9 +6,10 @@
   background-color: transparent;
   font-family: "Raleway", sans-serif;
   font-weight: bold;
-  margin-bottom: 20px;
+  margin: 5px;
   cursor: pointer;
   font-size: 14px;
+  min-width: 100px;
 }
 
 .primary-button {
@@ -19,8 +20,8 @@
   background: linear-gradient(to right, #045661, #045661a9);
   font-family: "Raleway", sans-serif;
   font-weight: bold;
-  margin-bottom: 20px;
   box-shadow: 3px 3px 8px 0 rgba(0, 0, 0, 0.48);
   cursor: pointer;
-  font-size: 20px;
+  font-size: 16px;
+  margin: 5px;
 }

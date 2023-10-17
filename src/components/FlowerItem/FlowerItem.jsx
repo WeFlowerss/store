@@ -32,8 +32,8 @@ export const FlowerItem = ({ flower, showModal }) => {
           <h4>Вартість - {price}грн</h4>
         </div>
         <div className={style["flower-buttons"]}>
-          <Button callback={showModal}>Show Info</Button>
-          <Button callback={addToBucket}>Add To Cart</Button>
+          <Button callback={showModal}>Показати більше</Button>
+          <Button callback={addToBucket}>Додати до кошика</Button>
         </div>
       </div>
       <div className={style["flower-img"]}>

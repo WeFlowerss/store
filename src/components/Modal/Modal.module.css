@@ -1,9 +1,7 @@
 .modal {
   width: 70vw;
-  min-height: 200px;
-  height: auto;
-  max-height: 70%;
-  overflow-y: auto;
+  max-height: 80vh;
+  overflow: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
