@@ -13,11 +13,11 @@ export const FlowerInfo = ({ item }) => {
   const { user } = Telegram.data;
 
   const saveToBucket = async () => {
-    await FlowersAPI.bucket.addToBucket(+user.id, item._id);
+    FlowersAPI.bucket.addToBucket(+user.id, item._id);
     Notify.success("Успішно додано до кошика");
   };
   const saveToWishList = async () => {
-    await FlowersAPI.wishlist.saveToWishlist(+user.id, item._id);
+    FlowersAPI.wishlist.saveToWishlist(+user.id, item._id);
     Notify.success("Успішно додано до списку бажань");
   };
 
