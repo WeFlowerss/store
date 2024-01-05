@@ -9,7 +9,7 @@ import { Bucket } from "../pages/Bucket/Bucket.jsx";
 function App() {
   return (
     <Provider store={store}>
-      <Router basename="/WeFlowersApp">
+      <Router basename="/store">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/bucket" element={<Bucket />} />
