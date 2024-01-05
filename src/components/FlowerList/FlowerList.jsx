@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchFlowers } from "../../store/flowers/actions";
 import { updateModalStatus } from "../../store/backdrop/actions";
 import { FlowerItem } from "../FlowerItem/FlowerItem";
-import { Button } from "../Button/Button";
 import { Backdrop } from "../Backdrop/Backdrop";
 import { Modal } from "../Modal/Modal";
 import { FlowerInfo } from "../FlowerInfo/FlowerInfo";
@@ -11,7 +10,7 @@ import { FlowerInfo } from "../FlowerInfo/FlowerInfo";
 import style from "./FlowerList.module.css";
 
 export const FlowerList = () => {
-  const [page, updatePage] = useState(1);
+  const [page, updatePage] = useState(0);
   const [currentBouquet, updateBouquet] = useState({});
 
   const flowers = useSelector((state) => state.flowersReducer.flowers);
@@ -19,13 +18,35 @@ export const FlowerList = () => {
 
   const onLoadPageClick = () => {
     updatePage(page + 1);
-    dispatch(fetchFlowers(page));
   };
 
   const onShowInfoClick = (item) => {
     dispatch(updateModalStatus(true));
     updateBouquet(item);
   };
+
+  const onObserve = (entries) => {
+    const { isIntersecting } = entries[0];
+    if (!isIntersecting) return;
+    onLoadPageClick();
+    console.log("load", page);
+  };
+
+  useEffect(() => {
+    const targetBox = document.querySelector(".targetElem");
+    const observer = new IntersectionObserver(onObserve, {
+      rootMargin: "50px",
+    });
+    observer.observe(targetBox);
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
+  useEffect(() => {
+    dispatch(fetchFlowers(page));
+    console.log(page);
+  }, [page]);
 
   return (
     <div className={style["flowers-component"]}>
@@ -40,10 +61,7 @@ export const FlowerList = () => {
           />
         ))}
       </ul>
-      <Button isPrimary={true} callback={onLoadPageClick}>
-        Load More
-      </Button>
-
+      <div className="targetElem"></div>
       <Backdrop>
         <Modal>
           <FlowerInfo item={currentBouquet} />
