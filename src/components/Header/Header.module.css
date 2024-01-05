@@ -1,0 +1,22 @@
+.header {
+  display: flex;
+  width: 100%;
+  padding: 10px;
+  gap: 10px;
+  justify-content: stretch;
+  background: #045661;
+}
+
+.header a {
+  text-transform: none;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+  padding: 5px;
+}
+
+.header a:hover {
+  transform: scale(1.05);
+}

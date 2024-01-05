@@ -1,10 +1,10 @@
 import { Header } from "../../components/Header/Header";
 
-export const Bucket = () => {
+export const WishList = () => {
   return (
     <>
       <Header />
-      <h1>Bucket</h1>
+      <h1>WishList</h1>
     </>
   );
 };

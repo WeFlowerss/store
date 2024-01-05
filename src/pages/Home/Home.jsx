@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { updateUser } from "../../store/user/actions";
 import { FlowerList } from "../../components/FlowerList/FlowerList";
 import { fetchFlowers } from "../../store/flowers/actions";
-
+import { Header } from "../../components/Header/Header";
 export const Home = () => {
   const dispatch = useDispatch();
 
@@ -20,6 +20,7 @@ export const Home = () => {
 
   return (
     <div>
+      <Header />
       <FlowerList />
     </div>
   );
