@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/WeFlowersApp/static/css/main.1e429fae.css",
+    "main.js": "/WeFlowersApp/static/js/main.3132ff8b.js",
+    "index.html": "/WeFlowersApp/index.html",
+    "main.1e429fae.css.map": "/WeFlowersApp/static/css/main.1e429fae.css.map",
+    "main.3132ff8b.js.map": "/WeFlowersApp/static/js/main.3132ff8b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1e429fae.css",
+    "static/js/main.3132ff8b.js"
+  ]
+}
