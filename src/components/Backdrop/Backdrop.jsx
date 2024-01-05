@@ -12,7 +12,10 @@ export const Backdrop = ({ children }) => {
   };
 
   if (!showModal) {
+    document.body.style.overflow = "scroll";
     return <></>;
+  } else {
+    document.body.style.overflow = "hidden";
   }
 
   return (
