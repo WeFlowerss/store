@@ -49,8 +49,9 @@
 }
 
 .flower-img img {
-  height: 100%;
-  object-fit: contain;
+  min-height: 100%;
+  min-width: 106%;
+  object-fit: cover;
   border-radius: 10px;
   filter: blur(3px);
   -webkit-filter: blur(3px);
