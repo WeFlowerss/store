@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchFlowers } from "../../store/flowers/actions";
 import { updateModalStatus } from "../../store/backdrop/actions";
+import { resetPage } from "../../store/global/actions";
 import { FlowerItem } from "../FlowerItem/FlowerItem";
 import { Backdrop } from "../Backdrop/Backdrop";
 import { Modal } from "../Modal/Modal";
@@ -11,15 +12,11 @@ import { FlowerInfo } from "../FlowerInfo/FlowerInfo";
 import style from "./FlowerList.module.css";
 
 export const FlowerList = () => {
-  const [page, updatePage] = useState(0);
   const [currentBouquet, updateBouquet] = useState({});
 
+  const page = useSelector((state) => state.globalReducer.page);
   const flowers = useSelector((state) => state.flowersReducer.flowers);
   const dispatch = useDispatch();
-
-  const onLoadPageClick = () => {
-    updatePage(page + 1);
-  };
 
   const onShowInfoClick = (item) => {
     dispatch(updateModalStatus(true));
@@ -29,11 +26,11 @@ export const FlowerList = () => {
   const onObserve = (entries) => {
     const { isIntersecting } = entries[0];
     if (!isIntersecting) return;
-    onLoadPageClick();
-    console.log("load", page);
+    dispatch({ type: "INCREMENT_PAGE_QUERY" });
   };
 
   useEffect(() => {
+    dispatch(resetPage(-1));
     const targetBox = document.querySelector(".targetElem");
     const observer = new IntersectionObserver(onObserve, {
       rootMargin: "50px",

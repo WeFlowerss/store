@@ -8,6 +8,7 @@ export const fetchFlowers = (page) => {
       const data = await FlowersAPI.products.getBouquets(page * 9, 9);
       dispatch({ type: "FETCH_DATA_SUCCESS", payload: data });
     } catch (error) {
+      // dispatch({ type: "FETCH_DATA_SUCCESS", payload: [] });
       dispatch({ type: "FETCH_DATA_FAILURE", payload: error.message });
     }
   };
