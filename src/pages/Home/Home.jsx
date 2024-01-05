@@ -19,7 +19,7 @@ export const Home = () => {
   }, [dispatch]);
 
   return (
-    <div>
+    <div className="container">
       <Header />
       <FlowerList />
     </div>

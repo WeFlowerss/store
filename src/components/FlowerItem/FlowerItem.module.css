@@ -39,7 +39,6 @@
 .flower-img {
   overflow: hidden;
   border-radius: 20px;
-  border: 1px solid #045661;
   width: 30%;
   display: flex;
   justify-content: center;
@@ -47,6 +46,7 @@
 }
 
 .flower-img img {
+  border-radius: 20px;
   height: 100%;
   object-fit: contain;
   filter: blur(3px);
