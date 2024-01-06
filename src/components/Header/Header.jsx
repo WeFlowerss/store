@@ -1,20 +1,26 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import styled from "styled-components";
 import style from "./Header.module.css";
-
-const StyledLink = styled(NavLink)`
-  &.active {
-    border-bottom: 1px solid white;
-  }
-`;
+import { FaCartShopping, FaHeart } from "react-icons/fa6";
 
 export const Header = () => {
   return (
-    <nav className={style.header}>
-      <StyledLink to="/">Home</StyledLink>
-      <StyledLink to="/bucket">Bucket</StyledLink>
-      <StyledLink to="/wishlist">WishList</StyledLink>
-    </nav>
+    <div>
+      <nav className={style.header}>
+        <div>
+          <NavLink to="/">Home</NavLink>
+          <NavLink to="/">Popular</NavLink>
+          <NavLink to="/">Orders</NavLink>
+        </div>
+        <div>
+          <NavLink to="/bucket">
+            <FaCartShopping />
+          </NavLink>
+          <NavLink to="/wishlist">
+            <FaHeart />
+          </NavLink>
+        </div>
+      </nav>
+    </div>
   );
 };
