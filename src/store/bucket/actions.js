@@ -15,3 +15,13 @@ export const fetchBucket = (userId) => {
     }
   };
 };
+
+export const deleteItemFromBucket = (products, userId, index) => {
+  return async (dispatch) => {
+    const id = products[index]._id;
+    FlowersAPI.bucket.deleteFromBucket(userId, id);
+    products = [...products];
+    products.splice(index, 1);
+    dispatch({ type: "UPDATE_PRODUCTS", payload: products });
+  };
+};

@@ -19,6 +19,8 @@ export const bucketReducer = (state = initialState, action) => {
     case "FETCH_BUCKET_FAILURE":
       return { ...state, loading: false, error: action.payload };
 
+    case "UPDATE_PRODUCTS":
+      return { ...state, products: action.payload };
     default:
       return state;
   }

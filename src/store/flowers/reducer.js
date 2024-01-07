@@ -1,6 +1,6 @@
 const initialState = {
   flowers: [],
-  loading: false,
+  loading: true,
   error: null,
 };
 
