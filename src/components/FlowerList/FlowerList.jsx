@@ -8,12 +8,13 @@ import { FlowerItem } from "../FlowerItem/FlowerItem";
 import { Backdrop } from "../Backdrop/Backdrop";
 import { Modal } from "../Modal/Modal";
 import { FlowerInfo } from "../FlowerInfo/FlowerInfo";
-
 import style from "./FlowerList.module.css";
+import { FlowerSkeleton } from "../FlowerItem/FlowerSkeleton";
 
 export const FlowerList = () => {
   const [currentBouquet, updateBouquet] = useState({});
 
+  const isLoading = useSelector((state) => state.flowersReducer.loading);
   const page = useSelector((state) => state.globalReducer.page);
   const flowers = useSelector((state) => state.flowersReducer.flowers);
   const dispatch = useDispatch();
@@ -43,9 +44,22 @@ export const FlowerList = () => {
 
   useEffect(() => {
     dispatch(fetchFlowers(page));
-    console.log(page);
   }, [page]);
 
+  useEffect(() => {
+    console.log("loading", isLoading);
+  }, [isLoading]);
+
+  if (isLoading) {
+    return (
+      <div className={style["flowers-component"]}>
+        <ul className={style["flower-list"]}>
+          <FlowerSkeleton />
+        </ul>
+        <div className="targetElem"></div>
+      </div>
+    );
+  }
   return (
     <div className={style["flowers-component"]}>
       <ul className={style["flower-list"]}>

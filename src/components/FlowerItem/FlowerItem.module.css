@@ -52,3 +52,26 @@
   filter: blur(3px);
   -webkit-filter: blur(3px);
 }
+
+.skeleton {
+  display: flex;
+  width: 100%;
+  background: linear-gradient(to right, #fae0df, #faf1f135);
+  border-radius: 10px;
+  overflow: hidden;
+  height: 150px;
+  padding: 10px;
+  margin: 15px 0;
+  justify-content: space-between;
+  box-shadow: 3px 3px 8px 0 rgba(0, 0, 0, 0.48);
+}
+
+.skeleton div {
+  width: 80%;
+}
+
+.skeleton > :last-child {
+  width: 30%;
+  height: 100%;
+  border-radius: 15px;
+}

@@ -1,5 +1,5 @@
 const initialState = {
-  userId: null,
+  user: null,
 };
 
 export function userReducer(state = initialState, action) {
@@ -7,7 +7,7 @@ export function userReducer(state = initialState, action) {
     case "UPDATE_USER_ID":
       return {
         ...state,
-        userId: action.payload,
+        user: action.payload,
       };
 
     default:

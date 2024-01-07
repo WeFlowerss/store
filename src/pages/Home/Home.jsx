@@ -13,10 +13,10 @@ export const Home = () => {
     };
     const tg = window.Telegram.WebApp;
     tg.expand();
-    const data = tg.initData || { userId: "123134234" };
+    const data = tg.initData || { userId: "433982686" };
     handleDispatchAction(data);
     dispatch(fetchFlowers(0));
-  }, [dispatch]);
+  });
 
   return (
     <div className="container">
