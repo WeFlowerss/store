@@ -20,6 +20,7 @@ export const BucketItemList = () => {
 
   return (
     <div>
+      <h1>{JSON.stringify(user)}</h1>
       <ul className={style.list}>
         {products?.map((product, index) => (
           <BucketItem
