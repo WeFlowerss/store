@@ -1,5 +1,6 @@
 const initialState = {
   user: null,
+  data: null,
   query: "",
 };
 
@@ -11,11 +12,12 @@ export function userReducer(state = initialState, action) {
       params.forEach((value, key) => {
         result[key] = value;
       });
-
+      result.user = JSON.parse(result.user);
       console.log(result);
       return {
         ...state,
-        user: result,
+        data: result,
+        user: result.user,
         query: action.payload,
       };
 

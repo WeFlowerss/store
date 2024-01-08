@@ -7,21 +7,20 @@ import style from "./BucketList.module.css";
 
 export const BucketItemList = () => {
   const user = useSelector((state) => state.userReducer.user);
-  const query = useSelector((state) => state.userReducer.query);
   const products = useSelector((state) => state.bucketReducer.products);
   const dispatch = useDispatch();
 
+  console.log(user);
   useEffect(() => {
-    dispatch(fetchBucket(user?.userId));
+    dispatch(fetchBucket(user?.id));
   }, []);
 
   const onDeleteClick = (index) => {
-    dispatch(deleteItemFromBucket(products, user?.userId, index));
+    dispatch(deleteItemFromBucket(products, user?.id, index));
   };
 
   return (
     <div>
-      <h1>{JSON.stringify(query)}</h1>
       <ul className={style.list}>
         {products?.map((product, index) => (
           <BucketItem
