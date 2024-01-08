@@ -1,5 +1,6 @@
 const initialState = {
   user: null,
+  query: "",
 };
 
 export function userReducer(state = initialState, action) {
@@ -15,6 +16,7 @@ export function userReducer(state = initialState, action) {
       return {
         ...state,
         user: result,
+        query: action.payload,
       };
 
     default:
