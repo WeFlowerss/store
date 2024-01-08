@@ -10,7 +10,6 @@ export const BucketItemList = () => {
   const products = useSelector((state) => state.bucketReducer.products);
   const dispatch = useDispatch();
 
-  console.log(user);
   useEffect(() => {
     dispatch(fetchBucket(user?.id));
   }, []);
