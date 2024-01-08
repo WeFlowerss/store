@@ -5,11 +5,16 @@ const initialState = {
 export function userReducer(state = initialState, action) {
   switch (action.type) {
     case "UPDATE_USER_ID":
-      const url = new URL(action.payload);
-      const params = url.searchParams;
+      const params = new URLSearchParams(action.payload);
+      const result = {};
+      params.forEach((value, key) => {
+        result[key] = value;
+      });
+
+      console.log(result);
       return {
         ...state,
-        user: params,
+        user: result,
       };
 
     default:
