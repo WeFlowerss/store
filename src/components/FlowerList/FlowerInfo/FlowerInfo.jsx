@@ -1,6 +1,6 @@
-import { Telegram } from "../../helpers/telegram";
-import { FlowersAPI } from "../../repositories/flowers-api";
-import { Button } from "../Button/Button";
+import { Telegram } from "../../../helpers/telegram";
+import { FlowersAPI } from "../../../repositories/flowers-api";
+import { Button } from "../../Button/Button";
 import { Notify } from "notiflix/build/notiflix-notify-aio";
 import style from "./FlowerInfo.module.css";
 

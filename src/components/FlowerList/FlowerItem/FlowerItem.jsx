@@ -1,7 +1,7 @@
-import { Button } from "../Button/Button";
+import { Button } from "../../Button/Button";
 import style from "./FlowerItem.module.css";
-import { Telegram } from "../../helpers/telegram";
-import { FlowersAPI } from "../../repositories/flowers-api";
+import { Telegram } from "../../../helpers/telegram";
+import { FlowersAPI } from "../../../repositories/flowers-api";
 import { Notify } from "notiflix/build/notiflix-notify-aio";
 
 Notify.init({

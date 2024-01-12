@@ -3,21 +3,24 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Empty } from "antd-mobile";
 import { ShopbagOutline } from "antd-mobile-icons";
-import { fetchBucket, deleteItemFromBucket } from "../../store/bucket/actions";
-import { BucketItem } from "./BucketItem/BucketItem";
-import style from "./BucketList.module.css";
+import {
+  fetchWishlist,
+  deleteItemFromWishlist,
+} from "../../store/wishlist/actions";
+import { WishlistItem } from "./WishlistItem/WishlistItem";
+import style from "./Wishlist.module.css";
 
-export const BucketItemList = () => {
+export const Wishlist = () => {
   const user = useSelector((state) => state.userReducer.user);
-  const products = useSelector((state) => state.bucketReducer.products);
+  const products = useSelector((state) => state.wishlistReducer.products);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchBucket(user?.id));
+    dispatch(fetchWishlist(user?.id));
   }, []);
 
   const onDeleteClick = (index) => {
-    dispatch(deleteItemFromBucket(products, user?.id, index));
+    dispatch(deleteItemFromWishlist(products, user?.id, index));
   };
 
   if (!products.length) {
@@ -49,7 +52,7 @@ export const BucketItemList = () => {
     <div>
       <ul className={style.list}>
         {products?.map((product, index) => (
-          <BucketItem
+          <WishlistItem
             product={product}
             key={index}
             onDelete={() => {

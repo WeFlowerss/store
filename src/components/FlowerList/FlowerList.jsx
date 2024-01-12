@@ -4,12 +4,12 @@ import { useSelector, useDispatch } from "react-redux";
 import { fetchFlowers } from "../../store/flowers/actions";
 import { updateModalStatus } from "../../store/backdrop/actions";
 import { resetPage } from "../../store/global/actions";
-import { FlowerItem } from "../FlowerItem/FlowerItem";
+import { FlowerItem } from "./FlowerItem/FlowerItem";
 import { Backdrop } from "../Backdrop/Backdrop";
 import { Modal } from "../Modal/Modal";
-import { FlowerInfo } from "../FlowerInfo/FlowerInfo";
+import { FlowerInfo } from "./FlowerInfo/FlowerInfo";
 import style from "./FlowerList.module.css";
-import { FlowerSkeleton } from "../FlowerItem/FlowerSkeleton";
+import { FlowerSkeleton } from "./FlowerItem/FlowerSkeleton";
 
 export const FlowerList = () => {
   const [currentBouquet, updateBouquet] = useState({});
@@ -45,10 +45,6 @@ export const FlowerList = () => {
   useEffect(() => {
     dispatch(fetchFlowers(page));
   }, [page]);
-
-  useEffect(() => {
-    console.log("loading", isLoading);
-  }, [isLoading]);
 
   if (isLoading) {
     return (

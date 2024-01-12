@@ -13,7 +13,6 @@ export function userReducer(state = initialState, action) {
         result[key] = value;
       });
       result.user = JSON.parse(result.user);
-      console.log(result);
       return {
         ...state,
         data: result,
