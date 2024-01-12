@@ -21,15 +21,13 @@ export const WishlistItem = ({ product, onDelete }) => {
 
   return (
     <div className={style.item}>
-      <div className={style.container}>
-        <div className={style.image}>
-          <Image src={image} />
-        </div>
-        <div>
-          <h1 className={style.title}>{name}</h1>
-          <p>Вартість: {price}</p>
-          <Button callback={addToBucket}>Додати до кошика</Button>
-        </div>
+      <div className={style.image}>
+        <Image src={image} />
+      </div>
+      <div>
+        <h1 className={style.title}>{name}</h1>
+        <p>Вартість: {price}</p>
+        <Button callback={addToBucket}>Додати до кошика</Button>
       </div>
       <div>
         <DeleteOutline fontSize={20} onClick={onDelete} />
