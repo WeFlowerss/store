@@ -2,7 +2,6 @@ import style from "./BucketItem.module.css";
 import { Image } from "antd-mobile";
 import { DeleteOutline } from "antd-mobile-icons";
 export const BucketItem = ({ product, onDelete }) => {
-  console.log(product);
   let { image, price, name } = product;
   name = name.replace("Букет", "").slice(2, -1);
   return (
