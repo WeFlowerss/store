@@ -10,6 +10,8 @@ import { Modal } from "../Modal/Modal";
 import { FlowerInfo } from "./FlowerInfo/FlowerInfo";
 import style from "./FlowerList.module.css";
 import { FlowerSkeleton } from "./FlowerItem/FlowerSkeleton";
+import { Empty } from "antd-mobile";
+import { ShopbagOutline } from "antd-mobile-icons";
 
 export const FlowerList = () => {
   const [currentBouquet, updateBouquet] = useState({});
@@ -46,6 +48,32 @@ export const FlowerList = () => {
     dispatch(fetchFlowers(page));
   }, [page]);
 
+  if (!flowers.length) {
+    return (
+      <div
+        style={{
+          minHeight: "80vh",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <Empty
+          image={
+            <ShopbagOutline
+              style={{
+                color: "var(--adm-color-light)",
+                fontSize: 80,
+              }}
+            />
+          }
+          description="Завантажуємо данні"
+        />
+        <div className="targetElem"></div>
+      </div>
+    );
+  }
+
   if (isLoading) {
     return (
       <div className={style["flowers-component"]}>
@@ -56,6 +84,7 @@ export const FlowerList = () => {
       </div>
     );
   }
+
   return (
     <div className={style["flowers-component"]}>
       <ul className={style["flower-list"]}>
