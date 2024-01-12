@@ -22,23 +22,24 @@ export const BucketItemList = () => {
 
   useEffect(() => {
     dispatch(fetchBucket(user?.id));
-    tg.onEvent("mainButtonClicked", onBtnClick);
+    /* tg.onEvent("mainButtonClicked", onBtnClick);
+    tg.mainButton.show();
+    tg.mainButton.setParams({
+      text: "Зробити замовлення",
+      color: "#045661",
+    }); */
     return () => {
-      tg.offEvent("mainButtonClicked", onBtnClick);
+      // tg.offEvent("mainButtonClicked", onBtnClick);
     };
   }, []);
 
   const onDeleteClick = (index) => {
     dispatch(deleteItemFromBucket(products, user?.id, index));
   };
-  tg.mainButton.show();
-  tg.mainButton.setParams({
-    text: "Зробити замовлення",
-    color: "#045661",
-  });
 
   return (
     <div>
+      <p>{JSON.stringify(tg)}</p>
       <ul className={style.list}>
         {products?.map((product, index) => (
           <BucketItem
