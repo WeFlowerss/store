@@ -17,6 +17,12 @@ export const BucketItemList = () => {
   const onDeleteClick = (index) => {
     dispatch(deleteItemFromBucket(products, user?.id, index));
   };
+  const tg = window.Telegram.WebApp;
+  tg.mainButton.show();
+  tg.mainButton.setParams({
+    text: "Зробити замовлення",
+    color: "#045661",
+  });
 
   return (
     <div>
