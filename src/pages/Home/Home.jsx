@@ -4,7 +4,7 @@ import { fetchFlowers } from "../../store/flowers/actions";
 import { Header } from "../../components/Header/Header";
 import useUserHook from "../../hooks/userHook";
 import { useDispatch } from "react-redux";
-import UserInfo from "../../components/UserInfo/UserInfo";
+// import UserInfo from "../../components/UserInfo/UserInfo";
 
 export const Home = () => {
   const dispatch = useDispatch();
