@@ -3,16 +3,16 @@ import { FlowerList } from "../../components/FlowerList/FlowerList";
 import { fetchFlowers } from "../../store/flowers/actions";
 import { Header } from "../../components/Header/Header";
 import useUserHook from "../../hooks/userHook";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import UserInfo from "../../components/UserInfo/UserInfo";
 
 export const Home = () => {
   const dispatch = useDispatch();
-  const [user, updateUser] = useUserHook();
+  const [user] = useUserHook();
 
   useEffect(() => {
     dispatch(fetchFlowers(0));
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className="container">
