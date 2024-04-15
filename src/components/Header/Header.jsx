@@ -19,6 +19,7 @@ export const Header = () => {
           {/* <StyledLink to="/popular">Popular</StyledLink> */}
           {/* <StyledLink to="/orders">Orders</StyledLink> */}
         </div>
+        <div></div>
         <div>
           <NavLink to="/bucket">
             <FaCartShopping />

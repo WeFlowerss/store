@@ -15,7 +15,6 @@ import { ShopbagOutline } from "antd-mobile-icons";
 
 export const FlowerList = () => {
   const [currentBouquet, updateBouquet] = useState({});
-
   const isLoading = useSelector((state) => state.flowersReducer.loading);
   const page = useSelector((state) => state.globalReducer.page);
   const flowers = useSelector((state) => state.flowersReducer.flowers);
