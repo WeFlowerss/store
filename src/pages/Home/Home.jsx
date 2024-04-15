@@ -8,7 +8,7 @@ import UserInfo from "../../components/UserInfo/UserInfo";
 
 export const Home = () => {
   const dispatch = useDispatch();
-  const [user] = useUserHook();
+  useUserHook();
 
   useEffect(() => {
     dispatch(fetchFlowers(0));
@@ -17,7 +17,7 @@ export const Home = () => {
   return (
     <div className="container">
       <Header />
-      <UserInfo user={user} />
+      {/* <UserInfo user={user} /> */}
       <FlowerList />
     </div>
   );

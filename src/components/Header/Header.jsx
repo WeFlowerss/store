@@ -15,7 +15,7 @@ export const Header = () => {
     <div>
       <nav className={style.header}>
         <div>
-          <StyledLink to="/">Home</StyledLink>
+          <StyledLink to="/">Головна</StyledLink>
           {/* <StyledLink to="/popular">Popular</StyledLink> */}
           {/* <StyledLink to="/orders">Orders</StyledLink> */}
         </div>
